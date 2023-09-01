@@ -1,5 +1,5 @@
 .navbar {
-  width: 100%;
+  width: 100vw;
   height: 94px;
   z-index: 100;
 
@@ -7,17 +7,10 @@
   justify-content: space-between;
   align-items: center;
 
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  padding: 0 20px;
   background: var(--black);
   border-bottom: 2px solid var(--primary);
 
   .left {
-    flex: 1;
-    background-color: blue;
     img {
       display: flex;
       width: 168.45px;
@@ -28,9 +21,7 @@
     }
   }
   .right {
-    flex: 1;
-
-    background-color: green;
+    color: white;
     button {
       color: white;
       border: 1px solid red;
