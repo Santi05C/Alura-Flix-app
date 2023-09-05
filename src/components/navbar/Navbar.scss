@@ -1,14 +1,19 @@
 .navbar {
-  width: 100vw;
   height: 94px;
-  z-index: 100;
-
+  z-index: 999;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-
+  // justify-content: center;
   background: var(--black);
   border-bottom: 2px solid var(--primary);
+
+  .container {
+    width: 1400px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+  }
 
   .left {
     img {
