@@ -1,25 +1,24 @@
-.videocard {
+.video_card {
   border: 2px solid;
-  border-radius: 4px;
-  text-decoration: none;
   overflow: hidden;
   cursor: pointer;
-  color: white;
-  flex: 0 0 298px;
-  width: 298px;
-  height: 197px;
-  //   background-image: url("/url");
-  background-size: cover;
-  background-position: center;
+  width: 270px;
+  height: 180px;
   border-radius: 10px;
-  position: relative;
+  // display: flex;
+  // object-fit: cover;
+
   display: flex;
-  align-items: flex-end;
-  padding: 16px;
+  align-items: center;
 
   transition: opacity 0.3s;
   &:hover,
   &:focus {
     opacity: 0.5;
+  }
+
+  img {
+    width: 298px;
+    height: 197px;
   }
 }

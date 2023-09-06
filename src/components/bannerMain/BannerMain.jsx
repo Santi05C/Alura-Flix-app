@@ -6,7 +6,6 @@ const BannerMain = () => {
     <div className="bannerMain">
       <div className="container">
         <div className="title">
-          <h1>Front End</h1>
           <h2>Challenge React</h2>
           <p>
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa
@@ -21,9 +20,9 @@ const BannerMain = () => {
             height="315"
             src="https://www.youtube.com/embed/ov7vA5HFe6w?si=TG-NnMLHNTBxQ6MW"
             title="YouTube video player"
-            frameborder="0"
+            // frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen
+            // allowfullscreen
           ></iframe>
         </div>
       </div>

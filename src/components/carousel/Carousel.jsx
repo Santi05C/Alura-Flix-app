@@ -5,8 +5,9 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import VideoCard from "../videoCard/VideoCard";
 
-const Carousel = ({ data }) => {
-  const video = data.videos;
+const Carousel = ({ slider }) => {
+  const video = slider.videos;
+  const categoryColor = slider.cor;
 
   const SampleNextArrow = (props) => {
     const { onClick } = props;
@@ -33,22 +34,22 @@ const Carousel = ({ data }) => {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 1,
+    slidesToShow: 4,
+    slidesToScroll: 4,
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
   };
   return (
-    <div>
+    <div className="carousel">
       <Slider {...settings}>
-        {video.map((video, index) => (
-          <div>
+        {video.map((video) => (
+          <div className="container_video_card" key={video.id}>
             <VideoCard
               videoTitle={video.titulo}
               videoURL={video.url}
               miniatura={video.img}
+              categoryColor={categoryColor}
             />
-            {/* <p>{video.titulo}</p> */}
           </div>
         ))}
       </Slider>

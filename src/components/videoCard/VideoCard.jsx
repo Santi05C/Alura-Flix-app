@@ -2,28 +2,11 @@ import React from "react";
 import "./VideoCard.scss";
 import { Link } from "react-router-dom";
 
-function getYouTubeId(youtubeURL) {
-  return youtubeURL.replace(
-    /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#&?]*).*/,
-    "$7"
-  );
-}
-
-const VideoCard = ({ videoTitle, videoURL, miniatura }) => {
-  const image = `https://img.youtube.com/vi/${getYouTubeId(
-    videoURL
-  )}/hqdefault.jpg`;
-  console.log(image);
+const VideoCard = ({ videoURL, miniatura, videoTitle, categoryColor }) => {
   return (
-    <div>
-      {/* <a
-        className="videocard"
-        href={videoURL}
-        title={videoTitle}
-        url={image}
-      ></a> */}
+    <div className="video_card" style={{ borderColor: categoryColor || "red" }}>
       <Link to={`${videoURL}`}>
-        <img src={miniatura} alt="" />
+        <img src={miniatura} alt="" title={videoTitle} />
       </Link>
     </div>
   );
