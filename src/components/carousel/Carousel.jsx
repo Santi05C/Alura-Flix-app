@@ -1,14 +1,24 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Carousel.scss";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import VideoCard from "../videoCard/VideoCard";
+import axios from "axios";
 
-const Carousel = ({ slider }) => {
-  const video = slider.videos;
-  const categoryColor = slider.cor;
+const Carousel = ({ cat }) => {
+  // const video = cat;
+  // console.log(cat);
 
+  // const filtered = videos.filter((v) => v.category === cat);
+  const videos = cat.videos;
+  const color = cat.cor;
+  console.log(videos);
+  // console.log(filtered[0].title);
+
+  // const categoryColor = cat.cor;
+
+  // console.log(cat);
   const SampleNextArrow = (props) => {
     const { onClick } = props;
     return (
@@ -42,13 +52,14 @@ const Carousel = ({ slider }) => {
   return (
     <div className="carousel">
       <Slider {...settings}>
-        {video.map((video) => (
-          <div className="container_video_card" key={video.id}>
+        {videos.map((v) => (
+          <div className="container_video_card" key={v._id}>
             <VideoCard
-              videoTitle={video.titulo}
-              videoURL={video.url}
-              miniatura={video.img}
-              categoryColor={categoryColor}
+              videoTitle={v.title}
+              videoURL={v.url}
+              miniatura={v.img}
+              color={color}
+              // categoryColor={categoryColor}
             />
           </div>
         ))}

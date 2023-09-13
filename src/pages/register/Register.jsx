@@ -1,14 +1,49 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Register.scss";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 const Register = () => {
+  const [category, setCategory] = useState([]);
+  // console.log(category[1].cor);
+
+  useEffect(() => {
+    const fetchVideos = async () => {
+      try {
+        const res = await axios.get(
+          "http://localhost:8800/api/category/search"
+        );
+
+        setCategory(res.data);
+
+        // console.log(res.data);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    fetchVideos();
+  }, []);
+
+  const [isHovering, setIsHovering] = useState(false);
+
+  const handleMouseEnter = () => {
+    setIsHovering(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovering(false);
+  };
+
   return (
     <div className="register">
       <h1>Nuevo Categoria</h1>
       <div className="form">
         <div className="inputs">
-          <input className="input" type="text" placeholder="Titulo" />
+          <input
+            className="input"
+            type="text"
+            placeholder="Nombre de la Categoria"
+          />
           <input className="input" type="text" placeholder="Link del video" />
           <input
             aria-invalid="false"
@@ -39,31 +74,24 @@ const Register = () => {
 
       <table className="table">
         <tr className="table_head">
-          <th>Nombre</th>
-          <th>Descripción</th>
-          <th>Editar</th>
-          <th>Remover</th>
+          <th>Categorías</th>
         </tr>
-        <tr>
-          <td>Front End</td>
-          <td>Descripción del frond</td>
-          <td>
-            <a href="#">Editar</a>
-          </td>
-          <th>
-            <a href="#">Remover</a>
-          </th>
-        </tr>
-        <tr>
-          <td>Back End</td>
-          <td>Descripción del back end</td>
-          <td>Female</td>
-        </tr>
-        <tr>
-          <td>Innovación y Gestión</td>
-          <td>Descripción de innovación </td>
-          <td>Male</td>
-        </tr>
+
+        {category.map((cat) => (
+          <div>
+            <tr>
+              <td
+                style={{
+                  backgroundColor: isHovering ? cat.cor : "transparent",
+                }}
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
+              >
+                {cat.title}
+              </td>
+            </tr>
+          </div>
+        ))}
       </table>
     </div>
   );

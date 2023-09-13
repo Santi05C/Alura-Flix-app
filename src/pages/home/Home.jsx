@@ -1,31 +1,17 @@
 import React, { useEffect, useState } from "react";
 import BannerMain from "../../components/bannerMain/BannerMain";
 import Carousel from "../../components/carousel/Carousel";
-import data from "../../data/datos-iniciales.json";
+// import data from "../../data/datos-iniciales.json";
 import "./Home.scss";
 import axios from "axios";
 
-const Home = () => {
-  const sliders = data.categorias;
-  const [category, setCategory] = useState([]);
+const Home = ({ category, setCategory }) => {
   console.log(category);
+  // const sliders = data.categorias;
 
-  useEffect(() => {
-    const fetchVideos = async () => {
-      try {
-        const res = await axios.get(
-          "http://localhost:8800/api/category/search"
-        );
+  // console.log(category[0].cor);
 
-        setCategory(res.data);
-
-        // console.log(res.data);
-      } catch (err) {
-        console.log(err);
-      }
-    };
-    fetchVideos();
-  }, []);
+  // const filtered = category.filter((c) => c.category === type);
 
   return (
     <div className="home">
@@ -34,23 +20,14 @@ const Home = () => {
       </div>
 
       {category.map((cat) => (
-        <div className="slider_home" key={cat.id}>
+        <div className="slider_home" key={cat._id}>
           <div className="category_slider">
             <h1 className="title_category" style={{ backgroundColor: cat.cor }}>
               {cat.title}
             </h1>
             <p>{cat.link_extra.text}</p>
           </div>
-          {/* <div className="category_slider">
-            <h1
-              className="title_category"
-              style={{ backgroundColor: slider.cor }}
-            >
-              {slider.titulo}
-            </h1>
-            <p>{slider.link_extra.text}</p>
-          </div> */}
-          {/* <Carousel slider={slider} /> */}
+          <Carousel cat={cat} />
         </div>
       ))}
     </div>
