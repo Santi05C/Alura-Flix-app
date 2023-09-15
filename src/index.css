@@ -28,3 +28,17 @@ a {
   padding-left: 80px;
   padding-right: 80px;
 }
+
+@media screen and (max-width: 660px) {
+  .wrapper {
+    padding-left: 40px;
+    padding-right: 50px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .wrapper {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+}

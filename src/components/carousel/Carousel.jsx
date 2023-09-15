@@ -13,7 +13,7 @@ const Carousel = ({ cat }) => {
   // const filtered = videos.filter((v) => v.category === cat);
   const videos = cat.videos;
   const color = cat.cor;
-  console.log(videos);
+
   // console.log(filtered[0].title);
 
   // const categoryColor = cat.cor;
@@ -24,7 +24,7 @@ const Carousel = ({ cat }) => {
     return (
       <div className="control-btn" onClick={onClick}>
         <button className="next">
-          <i className="fa fa-long-arrow-alt-right"></i>
+          <i class="fa-solid fa-chevron-right"></i>
         </button>
       </div>
     );
@@ -34,7 +34,7 @@ const Carousel = ({ cat }) => {
     return (
       <div className="control-btn" onClick={onClick}>
         <button className="prev">
-          <i className="fa fa-long-arrow-alt-left"></i>
+          <i class="fa-solid fa-chevron-left"></i>
         </button>
       </div>
     );
@@ -48,7 +48,46 @@ const Carousel = ({ cat }) => {
     slidesToScroll: 4,
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
+    responsive: [
+      {
+        breakpoint: 305,
+        settings: { slidesToShow: 1, slidesToScroll: 1 },
+      },
+      {
+        breakpoint: 320,
+        settings: { slidesToShow: 1, slidesToScroll: 1 },
+      },
+      {
+        breakpoint: 305,
+        settings: { slidesToShow: 1, slidesToScroll: 1 },
+      },
+      {
+        breakpoint: 480,
+        settings: { slidesToShow: 2, slidesToScroll: 2 },
+      },
+      {
+        breakpoint: 540,
+        settings: { slidesToShow: 2, slidesToScroll: 2 },
+      },
+      {
+        breakpoint: 640,
+        settings: { slidesToShow: 2, slidesToScroll: 2 },
+      },
+      {
+        breakpoint: 768,
+        settings: { slidesToShow: 2, slidesToScroll: 2 },
+      },
+      {
+        breakpoint: 991,
+        settings: { slidesToShow: 3, slidesToScroll: 3 },
+      },
+      {
+        breakpoint: 1280,
+        settings: { slidesToShow: 3, slidesToScroll: 3 },
+      },
+    ],
   };
+
   return (
     <div className="carousel">
       <Slider {...settings}>

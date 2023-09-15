@@ -8,15 +8,14 @@ const BannerMain = () => {
         <div className="title">
           <h2>Challenge React</h2>
           <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa
-            facere, recusandae veritatis, perspiciatis officia voluptatem
-            architecto expedita ipsa mollitia quae maiores enim ab repellendus
-            eos fugit modi fuga? Sequi, fugit.
+            Este challenge es una forma de apredizaje. es un mecanismo donde
+            prodras comprometerte en la resolución de un problema para poder
+            aplicar todos los conocimientos adquiridos en la formación react.
           </p>
         </div>
         <div className="video">
           <iframe
-            width="560"
+            width="50"
             height="315"
             src="https://www.youtube.com/embed/ov7vA5HFe6w?si=TG-NnMLHNTBxQ6MW"
             title="YouTube video player"

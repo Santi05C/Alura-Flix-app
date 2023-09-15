@@ -9,7 +9,7 @@ import Video from "./pages/video/Video";
 import axios from "axios";
 
 function App() {
-  const [category, setCategory] = useState([]);
+  const [categorys, setCategorys] = useState([]);
   // console.log(data);
 
   useEffect(() => {
@@ -19,7 +19,7 @@ function App() {
           "http://localhost:8800/api/category/search"
         );
         // console.log(res.data);
-        setCategory(res.data);
+        setCategorys(res.data);
       } catch (error) {
         console.log(error);
       }
@@ -46,16 +46,16 @@ function App() {
       children: [
         {
           path: "/",
-          element: <Home category={category} setCategory={setCategory} />,
+          element: <Home categorys={categorys} />,
         },
 
         {
           path: "/addvideo",
-          element: <Video />,
+          element: <Video categorys={categorys} />,
         },
         {
           path: "/register",
-          element: <Register />,
+          element: <Register categorys={categorys} />,
         },
       ],
     },

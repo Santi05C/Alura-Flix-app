@@ -26,10 +26,10 @@
     }
   }
   .right {
-    color: white;
     button {
       color: white;
-      border: 1px solid red;
+      background-color: transparent;
+      border: 1px solid white;
       box-sizing: border-box;
       cursor: pointer;
       padding: 16px 24px;
@@ -45,6 +45,40 @@
       &:hover,
       &:focus {
         opacity: 0.5;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .navbar {
+    .left {
+      img {
+        width: 130.45px;
+        height: 35px;
+      }
+    }
+    .right {
+      button {
+        padding: 10px 15px;
+      }
+    }
+  }
+}
+@media screen and (max-width: 480px) {
+  .navbar {
+    .container {
+      padding: 20px;
+    }
+    .left {
+      img {
+        width: 120px;
+        height: 35px;
+      }
+    }
+    .right {
+      button {
+        padding: 9px 10px;
       }
     }
   }

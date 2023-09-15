@@ -10,6 +10,9 @@ const Footer = () => {
           alt="Logo Alura"
         />
       </a>
+      <p className="name">
+        Todos los derechos reservados por &copy;Santiago Cabrera 2023
+      </p>
     </div>
   );
 };

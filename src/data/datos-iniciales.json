@@ -111,9 +111,10 @@
         "url": "https://www.alura.com.br/formacao-data-science",
         "img": "https://img.youtube.com/vi/Uh-GNH-t89w/hqdefault.jpg"
       },
+
+      "id": 14,
       "videos": [
         {
-          "id": 14,
           "titulo": "¿Qué son las Soft Skills?",
           "url": "https://www.youtube.com/watch?v=vhwspfvI52k&ab_channel=AluraLatam",
           "img": "https://img.youtube.com/vi/vhwspfvI52k/hqdefault.jpg"
