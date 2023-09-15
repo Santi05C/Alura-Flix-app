@@ -16,7 +16,7 @@ function App() {
     const fetchData = async () => {
       try {
         const res = await axios.get(
-          "http://localhost:8800/api/category/search"
+          "https://appflix.onrender.com/api/category/search"
         );
         // console.log(res.data);
         setCategorys(res.data);

@@ -20,7 +20,7 @@ const Video = ({ categorys }) => {
         alert("¡Elija una categoria existente o rigistre una diferente!");
       } else {
         const id = filtered._id;
-        await axios.post(`http://localhost:8800/api/video/${id}`, {
+        await axios.post(`https://appflix.onrender.com/api/video/${id}`, {
           title,
           url,
           img,
